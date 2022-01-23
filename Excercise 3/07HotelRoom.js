@@ -1,0 +1,41 @@
+function hotelRoom(input) {
+    const season = input[0];
+    const nights = Number(input[1]);
+    const mayAndOctoberStudioPrice = 50;
+    const mayAndOctoberApartmentPrice = 60;
+    const juneAndSeptemberStudioPrice = 75.20
+    const juneAndSeptemberApartmentPrice = 68.7;
+    const julyAndAugustStudioPrice = 76;
+    const julyAndAugustApartmentPrice = 77;
+    let totalMoneyForStudio = 0;
+    let totalMoneyForApartment = 0;
+
+    
+    switch (season) {
+        case "May":
+            case "October": 
+            totalMoneyForStudio = nights * mayAndOctoberStudioPrice;
+            totalMoneyForApartment = nights * mayAndOctoberApartmentPrice
+            if (nights >7 && nights < 14 ) {
+                totalMoneyForStudio -= totalMoneyForStudio * 0.05;
+            } else if (nights > 14) {
+                totalMoneyForStudio -= totalMoneyForStudio * 0.3;
+            }
+            break;
+            case "June":
+            case "September":
+                totalMoneyForStudio = nights * juneAndSeptemberStudioPrice;
+                totalMoneyForApartment = nights * juneAndSeptemberApartmentPrice;
+                if (nights > 14){
+                    totalMoneyForStudio -= totalMoneyForStudio * 0.2;
+                }
+            break;
+            case "July":
+            case "August":
+            break;
+
+    }
+}
+hotelRoom(["May", "15"]);
+hotelRoom(["June", "14"]);
+hotelRoom(["August", "20"]);
