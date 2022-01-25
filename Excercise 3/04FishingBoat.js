@@ -18,7 +18,7 @@ function fishingBoat(input) {
             totalMoney = springPrice
             break;
         case "Summer":
-        case "Fall":
+        case "Autumn":
              totalMoney = summerAndFallPrice
              break;
     }
@@ -41,7 +41,7 @@ if (budget >= totalMoney) {
     console.log (`Not enough money! You need ${moneyNeeded.toFixed(2)} leva.`)
 }
 }
-fishingBoat(["3000", "Summer", "11"]);
+/* fishingBoat(["3000", "Summer", "11"]);  Fall */
 fishingBoat(["3600", "Autumn", "6"]);
 fishingBoat(["2000", "Winte", "13"]);
 

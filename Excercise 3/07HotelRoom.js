@@ -2,7 +2,7 @@ function hotelRoom(input) {
     const season = input[0];
     const nights = Number(input[1]);
     const mayAndOctoberStudioPrice = 50;
-    const mayAndOctoberApartmentPrice = 60;
+    const mayAndOctoberApartmentPrice = 65;
     const juneAndSeptemberStudioPrice = 75.20
     const juneAndSeptemberApartmentPrice = 68.7;
     const julyAndAugustStudioPrice = 76;
@@ -16,7 +16,7 @@ function hotelRoom(input) {
             case "October": 
             totalMoneyForStudio = nights * mayAndOctoberStudioPrice;
             totalMoneyForApartment = nights * mayAndOctoberApartmentPrice
-            if (nights >7 && nights < 14 ) {
+            if (nights > 7 && nights < 14 ) {
                 totalMoneyForStudio -= totalMoneyForStudio * 0.05;
             } else if (nights > 14) {
                 totalMoneyForStudio -= totalMoneyForStudio * 0.3;
@@ -32,9 +32,15 @@ function hotelRoom(input) {
             break;
             case "July":
             case "August":
+                totalMoneyForStudio = nights * julyAndAugustStudioPrice;
+                totalMoneyForApartment = nights * julyAndAugustApartmentPrice;
             break;
 
+    } if (nights > 14) {
+        totalMoneyForApartment -= totalMoneyForApartment * 0.1;
     }
+    console.log(`Apartment: ${totalMoneyForApartment.toFixed(2)} lv.`);
+    console.log(`Studio: ${totalMoneyForStudio.toFixed(2)} lv.`);
 }
 hotelRoom(["May", "15"]);
 hotelRoom(["June", "14"]);
