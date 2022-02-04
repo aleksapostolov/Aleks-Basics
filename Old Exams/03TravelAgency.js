@@ -58,11 +58,64 @@ function travelAgency(input) {
                         console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
                     }
                     break;
-    }
+    } 
+    } else if (town === 'Bansko' && days >7 || town === 'Borovets' && days > 7 ){ 
+        switch (package){
+            case 'withEquipment' :
+                pricePerNight = 100;
+                if ( vipDiscount === 'yes') {
+                    pricePerNight *= 0.9;
+                    totalStay = pricePerNight * days - pricePerNight;
+                    console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                } else {
+                    totalStay = pricePerNight * days - pricePerNight;
+                    console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                }
+                break;
+                case 'noEquipment' :
+                    pricePerNight = 80;
+                    if ( vipDiscount === 'yes') {
+                        pricePerNight *= 0.95;
+                        totalStay = pricePerNight * days - pricePerNight;
+                        console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                    } else {
+                        totalStay = pricePerNight * days - pricePerNight;
+                        console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                    }
+                    break;
+        }
+    } else if (town === 'Varna' && days > 7  || town === 'Burgas' && days > 7 ) {
+        switch (package){
+            case 'withBreakfast' :
+                pricePerNight = 130;
+                if ( vipDiscount === 'yes') {
+                    pricePerNight *= 0.88;
+                    totalStay = pricePerNight * days - pricePerNight;
+                    console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                } else {
+                    totalStay = pricePerNight * days - pricePerNight;
+                    console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                }
+                break;
+                case 'noBreakfast' :
+                    pricePerNight = 100;
+                    if ( vipDiscount === 'yes') {
+                        pricePerNight *= 0.93;
+                        totalStay = pricePerNight * days - pricePerNight;
+                        console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                    } else {
+                        totalStay = pricePerNight * days - pricePerNight;
+                        console.log (`The price is ${totalStay.toFixed(2)}lv! Have a nice time!`);
+                    }
+                    break;
+                }
 
     } else {
         console.log ('Invalid input!');
     }
+
+
+    
 }
 
 travelAgency(["Borovets", "noEquipment", "yes", "6"]);
