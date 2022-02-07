@@ -5,7 +5,6 @@ function cake(input) {
     let piecesOfCake = width * length;
     let command = input[index];
     index++
-   
     
     while (command !== "STOP"){
         let eatenPieces = Number(command);
@@ -14,14 +13,10 @@ function cake(input) {
         if(piecesOfCake <= 0){
             console.log(`No more cake left! You need ${Math.abs(piecesOfCake)} pieces more.`);
             break;  
-        } 
-            
+        }     
         command = input[index];
-        index++;
-        
-            
+        index++;        
     }
-    
     if (command === "STOP"){
                    
         console.log(`${piecesOfCake} pieces are left.`);
